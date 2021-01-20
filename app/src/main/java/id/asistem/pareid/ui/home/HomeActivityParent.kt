@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.ShimmerFrameLayout
+import com.google.gson.Gson
 import de.hdodenhof.circleimageview.CircleImageView
 import id.asistem.pareid.PareId.Companion.db
 import id.asistem.pareid.PareId.Companion.prefManager
@@ -37,6 +38,13 @@ class HomeActivityParent : AppCompatActivity(), ClickListener {
     }
 
     private fun init() {
+        val child = db.getChildDao().getAllChild()
+        val usage = db.getUsageDao().getAllUsage()
+        val jsonChild = Gson().toJson(child)
+        val jsonUsage = Gson().toJson(usage)
+
+        Log.d("jsonChild",jsonChild)
+        Log.d("jsonUsage",jsonUsage)
 
         if (db.getUsageDao().getAllUsage().isNullOrEmpty()){
             dummyUsage()

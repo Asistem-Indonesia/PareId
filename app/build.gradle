@@ -58,10 +58,14 @@ dependencies {
     implementation "androidx.room:room-runtime:2.3.0-alpha04"
     implementation "androidx.room:room-ktx:2.3.0-alpha04"
     kapt "androidx.room:room-compiler:2.3.0-alpha04"
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
 
     // Shimmer
     implementation 'com.facebook.shimmer:shimmer:0.4.0'
 
     // Chart
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+
+    //gson
+    implementation "com.google.code.gson:gson:2.8.6"
 }
